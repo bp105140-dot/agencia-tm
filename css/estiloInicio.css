@@ -595,13 +595,14 @@ input {
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-wrap: wrap;
-  overflow: hidden;
-  border: 1px solid rgba(22, 101, 193, 0.1);
-  transition: transform 0.3s ease;
+  overflow: visible; /* CORRIGIDO: permite que a borda laranja seja visível */
+  border: 2px solid rgba(22, 101, 193, 0.1); /* Aumentado de 1px para 2px */
+  transition: all 0.3s ease; /* Mudado de transform para all */
 }
 .cardCase:hover {
   transform: translateY(-5px);
   border-color: #ff590e;
+  box-shadow: 0 20px 50px rgba(255, 89, 14, 0.15); /* Sombra mais visível no hover */
 }
 .infoCase {
   flex: 1;
@@ -612,6 +613,8 @@ input {
   justify-content: center;
   align-items: center;
   text-align: center;
+  border-radius: 20px 0 0 20px; /* Mantém cantos arredondados */
+  overflow: hidden; /* Previne que o conteúdo vaze */
 }
 .cardCase h3 {
   color: #162537;
@@ -650,10 +653,13 @@ input {
 .imgCase {
   flex: 1;
   min-width: 300px;
-  min-height: 350px;
+  min-height: 400px; /* AUMENTADO de 350px para 400px */
+  max-height: 400px; /* ADICIONADO: limita altura máxima */
   background-color: #f0f0f0;
   background-size: cover;
-  background-position: top center;
+  background-position: center center; /* CORRIGIDO: de top center para center */
+  border-radius: 0 20px 20px 0; /* Mantém cantos arredondados */
+  overflow: hidden; /* Garante que a imagem não vaze */
 }
 /* IMAGENS CORRIGIDAS (Com Letra Maiúscula) */
 #imgCase1 {
@@ -697,7 +703,7 @@ input {
     font-size: 2em;
     margin-bottom: 40px;
   }
-
+  
   .subTitleSectionBlack {
     font-size: 1.6em;
   }
