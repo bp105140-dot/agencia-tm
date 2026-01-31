@@ -1,0 +1,779 @@
+/*=================================== Estilos Gerais ===================================*/
+
+::-webkit-scrollbar {
+  background: #f7f4f2;
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #1665c1;
+  border-radius: 5px;
+}
+::-webkit-scrollbar:hover {
+  width: 10px;
+}
+
+::selection {
+  background: #ff590e;
+  color: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+p,
+h1,
+ul,
+li,
+blockquote {
+  padding: 0px;
+  margin: 0px;
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: #f7f4f2; /* Fundo Creme Claro */
+  background-size: 100%;
+  color: #162537; /* Texto Escuro */
+  font-size: 16px;
+  line-height: 1.3;
+  text-align: center;
+  font-family: "Poppins Regular";
+}
+
+* {
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #1665c1;
+}
+a:hover {
+  text-decoration: none;
+}
+img {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  color: #162537;
+}
+h2 {
+  font-size: 1.825em;
+  color: #162537;
+}
+h3 {
+  font-size: 1.25em;
+  color: #1665c1;
+}
+span {
+  font-size: 1em;
+  color: #162537;
+}
+
+textarea:focus,
+input:focus,
+select:focus {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+}
+input,
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.textOn {
+  color: #ff590e;
+}
+.col-wide {
+  grid-column: 1 / -1;
+}
+
+/* Secções */
+.blackBg {
+  background: #162537;
+  padding: 50px 0;
+  color: #ffffff;
+}
+.whiteBg {
+  background: #ffffff;
+  padding: 50px 0;
+}
+.titleSectionWhite {
+  color: #162537;
+  font-size: 2.5em;
+  font-family: Poppins Semibold;
+  margin-bottom: 50px;
+  text-align: center;
+  padding: 0 30px;
+}
+.titleSectionBlack {
+  color: #ffffff;
+  font-size: 2.5em;
+  font-family: Poppins Semibold;
+  margin-bottom: 50px;
+  text-align: center;
+  padding: 0 30px;
+}
+.subTitleSectionBlack {
+  font-size: 2em;
+  color: #ff590e;
+  margin-bottom: 20px;
+  font-family: "Poppins Bold";
+}
+
+.poppinsRegular,
+h3,
+p {
+  font-family: "Poppins Regular";
+}
+.poppinsBold,
+h1 {
+  font-family: "Poppins Bold";
+}
+.poppinsSemibold,
+a,
+label,
+input {
+  font-family: "Poppins Semibold";
+}
+.poppinsLight {
+  font-family: "Poppins Light";
+}
+
+/*=================================== Capa (Ajuste Final de Altura) ===================================*/
+
+/*=================================== Capa (Tamanho Ajustado) ===================================*/
+
+.divCapaInicio {
+  background: url(../galeria/imgInicio.jpg);
+  background-repeat: no-repeat;
+
+  /* AJUSTE 1: Foca no centro-topo (para não cortar cabeças, mas tentar mostrar mais o corpo) */
+  background-position: center 20%;
+
+  /* Mantém preenchimento total */
+  background-size: cover;
+  background-attachment: scroll;
+
+  /* AJUSTE 2: Tamanho Fixo e Contido */
+  margin-top: 90px; /* Espaço do menu */
+  height: calc(100vh - 90px); /* Ocupa EXATAMENTE o resto da tela, sem rolar */
+  min-height: 500px; /* Segurança para telas muito baixas */
+
+  width: 100%;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* O resto (Overlay) continua igual */
+.divCapaInicio::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(22, 37, 55, 0.1) 0%,
+    rgba(22, 37, 55, 0.9) 70%,
+    rgba(22, 37, 55, 1) 100%
+  );
+  z-index: 0;
+}
+
+.divContentCapa {
+  width: 100%;
+  max-width: 1310px;
+  margin: 0 auto;
+  padding: 0 5%; /* Margem lateral */
+
+  display: flex;
+  justify-content: flex-end; /* Garante bloco na direita */
+  position: relative;
+  z-index: 1;
+}
+
+.contentCapa {
+  max-width: 600px; /* Limita largura para quebra de linha bonita */
+  width: 100%;
+  text-align: right; /* Alinha texto à direita */
+}
+
+/* Título Principal */
+.titleCapa {
+  font-size: 2.8em; /* Tamanho equilibrado */
+  color: #ffffff !important;
+  font-family: "Poppins Bold";
+  line-height: 1.2;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra para leitura */
+}
+
+.divTextCapa p:nth-child(2) {
+  color: #e0e0e0 !important;
+  font-size: 1.2em;
+  font-weight: 300;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  margin-left: auto; /* Empurra para a direita */
+  max-width: 450px;
+}
+
+/* Área dos Botões */
+.divBotaoServicosCapa {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Botão "Nossos Serviços" */
+.botaoServicosCapa {
+  background: #ff590e;
+  color: #ffffff;
+  padding: 12px 30px;
+  border-radius: 5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.95em;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.botaoServicosCapa:hover {
+  background: #ffffff;
+  color: #ff590e;
+  transform: translateY(-3px);
+}
+
+/* Botão "Drone" */
+.botaoDroneCapa {
+  border: 2px solid #ff590e;
+  color: #ffffff;
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.95em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.botaoDroneCapa:hover {
+  background: #ff590e;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(255, 89, 14, 0.4);
+}
+
+/*=================================== Quem Somos ===================================*/
+.boxQuemSomos {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  border-left: 5px solid #1665c1;
+  text-align: left;
+}
+.boxQuemSomos .titleSectionWhite {
+  text-align: left;
+  padding: 0;
+  margin-bottom: 30px;
+  font-size: 2em;
+  color: #1665c1;
+}
+.textoQuemSomos p {
+  font-size: 1.05em;
+  color: #162537;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+/*=================================== Diretrizes ===================================*/
+.contentDiretrizes {
+  max-width: 1310px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+.listaDiretrizes {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.cardDiretriz {
+  width: 45%;
+  max-width: 500px;
+  min-width: 300px;
+  background: #ffffff;
+  padding: 40px 30px;
+  border: 1px solid rgba(22, 101, 193, 0.2);
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cardDiretriz:hover {
+  border-color: #ff590e;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(22, 101, 193, 0.15);
+}
+.cardDiretriz i {
+  font-size: 40px;
+  color: #ff590e;
+  margin-bottom: 20px;
+  background: rgba(255, 89, 14, 0.1);
+  padding: 20px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.cardDiretriz:hover i {
+  background: #ff590e;
+  color: #ffffff;
+}
+.cardDiretriz h3 {
+  color: #162537;
+  font-family: "Poppins Bold";
+  margin-bottom: 15px;
+}
+.cardDiretriz p {
+  color: #162537;
+  line-height: 1.6;
+}
+
+/*=================================== Valores ===================================*/
+.divDiferenciais {
+  width: 100%;
+  height: auto;
+  padding-bottom: 50px;
+}
+.listaDiferenciais {
+  max-width: 1310px;
+  padding: 0 30px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.diferencial {
+  width: 23%;
+  max-width: 300px;
+  min-width: 200px;
+  margin-bottom: 20px;
+  height: auto;
+  padding: 20px 15px;
+  background: #ffffff;
+  border: 1px solid rgba(22, 101, 193, 0.2);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.diferencial:hover {
+  border-color: #ff590e;
+  transform: translateY(-5px);
+}
+.diferencial h3 {
+  color: #162537;
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+.diferencial p {
+  font-size: 0.9em;
+}
+.diferencial img {
+  max-width: 100px;
+  margin: 0 auto;
+  padding: 10px;
+  transition: all 0.5s ease;
+}
+
+/*=================================== Soluções ===================================*/
+.divSolucoes {
+  width: 100%;
+  padding-bottom: 50px;
+}
+.divSolucoes > div + div {
+  margin-top: 80px;
+}
+.solucaoServico {
+  max-width: 1310px;
+  padding: 0 30px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+.textSolucaoServico {
+  width: 50%;
+  text-align: left;
+}
+.textSection {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+.textSolucaoServico .textOn {
+  color: #1665c1;
+  font-weight: 600;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  display: block;
+}
+.textSolucaoServico > p {
+  margin-bottom: 15px;
+  color: rgba(255, 255, 255, 0.8);
+}
+.divImgServico {
+  width: 45%;
+  max-width: 400px;
+  height: 300px;
+  border-radius: 10px;
+}
+#imgSite {
+  background: url(../galeria/responsividade.png) no-repeat center;
+  background-size: contain;
+}
+#imgLandingPage {
+  background: url(../galeria/landingPage.png) no-repeat center;
+  background-size: contain;
+}
+#imgSocialMedia {
+  background: url(../galeria/socialMedia.png) no-repeat center;
+  background-size: contain;
+}
+#imgIdVisual {
+  background: url(../galeria/idVisual.png) no-repeat center;
+  background-size: contain;
+}
+
+/*=================================== Outros Serviços ===================================*/
+.divOutrosServicos {
+  width: 100%;
+  padding-bottom: 80px;
+}
+.contentOutrosServicos {
+  max-width: 1310px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+.listaServicosExtra {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.cardExtra {
+  flex: 1;
+  min-width: 300px;
+  max-width: 380px;
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(22, 101, 193, 0.1);
+  border-bottom: 5px solid transparent;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.cardExtra:hover {
+  transform: translateY(-10px);
+  border-bottom-color: #ff590e;
+  box-shadow: 0 20px 50px rgba(22, 101, 193, 0.2);
+}
+.iconExtra {
+  width: 80px;
+  height: 80px;
+  background: rgba(22, 101, 193, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  transition: 0.3s;
+}
+.iconExtra i {
+  font-size: 35px;
+  color: #1665c1;
+}
+.cardExtra:hover .iconExtra {
+  background: #ff590e;
+}
+.cardExtra:hover .iconExtra i {
+  color: #ffffff;
+}
+.cardExtra h3 {
+  color: #162537;
+  font-family: "Poppins Bold";
+  font-size: 1.3em;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+.cardExtra p {
+  color: #555;
+  font-size: 0.95em;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+.btnExtra {
+  padding: 10px 30px;
+  border: 2px solid #ff590e;
+  border-radius: 25px;
+  color: #ff590e;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+}
+.btnExtra:hover {
+  background: #ff590e;
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(255, 89, 14, 0.3);
+}
+
+/*=================================== Carrossel (Swiper) ===================================*/
+.listaCases {
+  max-width: 1310px;
+  padding: 0 30px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.swiper {
+  width: 100%;
+  padding-bottom: 50px !important;
+  padding-top: 20px;
+}
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  height: auto;
+  padding: 0 20px;
+}
+.swiper-slide .cardCase {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  border: 1px solid rgba(22, 101, 193, 0.1);
+  transition: transform 0.3s ease;
+}
+.cardCase:hover {
+  transform: translateY(-5px);
+  border-color: #ff590e;
+}
+.infoCase {
+  flex: 1;
+  padding: 40px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.cardCase h3 {
+  color: #162537;
+  font-family: "Poppins Bold";
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+.descCase {
+  color: #666;
+  font-size: 1em;
+  margin-bottom: 30px;
+  max-width: 80%;
+}
+.numerosCase {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  justify-content: center;
+}
+.dado {
+  text-align: center;
+}
+.dado span.destaque {
+  display: block;
+  font-size: 2.5em;
+  font-family: "Poppins Bold";
+  color: #ff590e;
+  line-height: 1;
+}
+.dado p {
+  font-size: 0.9em;
+  color: #1665c1;
+  font-weight: 600;
+  margin-top: 5px;
+}
+.imgCase {
+  flex: 1;
+  min-width: 300px;
+  min-height: 350px;
+  background-color: #f0f0f0;
+  background-size: cover;
+  background-position: top center;
+}
+/* IMAGENS CORRIGIDAS (Com Letra Maiúscula) */
+#imgCase1 {
+  background-image: url("../galeria/Case1.jpg");
+  background-repeat: no-repeat;
+}
+#imgCase2 {
+  background-image: url("../galeria/Case2.jpg");
+  background-repeat: no-repeat;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ff590e !important;
+  font-weight: bold;
+}
+
+/*=================================== Fontes ===================================*/
+@font-face {
+  font-family: Poppins Regular;
+  src: url("../fontes/Poppins/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: Poppins Bold;
+  src: url("../fontes/Poppins/Poppins-Bold.ttf");
+}
+@font-face {
+  font-family: Poppins Semibold;
+  src: url("../fontes/Poppins/Poppins-SemiBold.ttf");
+}
+@font-face {
+  font-family: Poppins Light;
+  src: url("../fontes/Poppins/Poppins-Light.ttf");
+}
+
+/*=================================== RESPONSIVIDADE (MOBILE) ===================================*/
+@media (max-width: 900px) {
+  .diferencial {
+    width: 48%;
+    max-width: none;
+  }
+  .listaServicosExtra {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cardExtra {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* CAPA MOBILE: Centraliza tudo */
+  .divCapaInicio {
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+  }
+  .divCapaInicio::before {
+    background: rgba(22, 37, 55, 0.85);
+  } /* Escurece uniforme */
+
+  .divContentCapa {
+    padding: 0 20px;
+    justify-content: center;
+  }
+  .contentCapa {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .titleCapa {
+    font-size: 2em;
+  }
+  .divTextCapa p:nth-child(2) {
+    margin: 0 auto 30px auto;
+    font-size: 1em;
+  }
+
+  .divBotaoServicosCapa {
+    justify-content: center;
+  }
+
+  /* Serviços e Cases */
+  .solucaoServico {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 30px;
+  }
+  .divImgServico,
+  .imgCase {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    height: 250px;
+    order: -1;
+  }
+  .textSolucaoServico {
+    width: 100%;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+  .cardCase {
+    flex-direction: column-reverse;
+  }
+
+  /* Diretrizes */
+  .listaDiretrizes {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cardDiretriz {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .diferencial {
+    width: 100%;
+  }
+}

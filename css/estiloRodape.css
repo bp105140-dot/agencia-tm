@@ -1,0 +1,278 @@
+/*===================================Rodapé===================================*/
+
+footer {
+  border-top: 5px solid #ff590e;
+  background: #162537; /* Fundo Azul Escuro para "ancorar" o site */
+  width: 100%;
+}
+
+.rodape {
+  grid-area: rodape;
+  max-width: 1310px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 30px;
+  display: grid;
+  color: #ffffff;
+  grid-template-columns: 1fr 1fr 1.2fr;
+  gap: 30px;
+  grid-template-areas:
+    "sobreNos contato formContato"
+    "sobreNos redesSociais formContato";
+  font-size: 14px;
+}
+
+/* Títulos em Laranja para destaque */
+.sobreNos h3,
+.contato h3,
+.formContato h3,
+.redesSociais h3 {
+  color: #ff590e;
+  margin-bottom: 15px;
+  font-family: "Poppins Semibold";
+  text-transform: uppercase;
+}
+
+/* Sobre Nós */
+.sobreNos {
+  grid-area: sobreNos;
+  text-align: left;
+  padding-right: 70px;
+}
+.sobreNos p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+.sobreNos p + p {
+  margin-top: 10px;
+}
+
+/* Contato (Com correção de visibilidade e alinhamento) */
+.contato {
+  grid-area: contato;
+  text-align: left;
+}
+.contato ul li {
+  display: flex;
+  align-items: center; /* Alinha ícone e texto verticalmente */
+  margin-bottom: 15px;
+}
+.contato i {
+  color: #ff590e;
+  font-size: 18px;
+  margin-right: 10px;
+  width: 20px;
+  text-align: center;
+}
+/* Garante que os textos e links são brancos */
+.contato p,
+.contato a {
+  color: #ffffff !important;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+.contato a:hover {
+  color: #ff590e !important;
+}
+
+/* Formulário */
+.formContato {
+  grid-area: formContato;
+  text-align: left;
+  margin-left: 20px;
+}
+.formContato label {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 12px;
+  display: block;
+  margin-top: 10px;
+}
+.formContato input {
+  width: 100%;
+  background: #ffffff;
+  border: none;
+  color: #162537;
+  height: 40px;
+  padding-left: 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.formContato input:focus {
+  border: 2px solid #ff590e;
+}
+.formContato ul ul {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  margin-top: 10px;
+}
+.formContato ul ul li {
+  width: 50%;
+}
+
+#enviar {
+  width: 40%;
+  min-width: 120px;
+  float: right;
+  margin-top: 20px;
+  background: #ff590e;
+  color: #ffffff;
+  cursor: pointer;
+  height: 40px;
+  font-weight: 600;
+  border-radius: 25px;
+  border: none;
+  transition: all 0.3s ease;
+}
+#enviar:hover {
+  transform: scale(1.05);
+  background: #ffffff;
+  color: #162537;
+}
+
+/* ---  REDES SOCIAIS --- */
+
+.redesSociais {
+  grid-area: redesSociais;
+  display: flex;
+  flex-direction: column; /* Garante título em cima, bolinhas em baixo */
+  align-items: flex-start;
+  margin-top: 10px;
+}
+
+.redesSociais h3 {
+  color: #ff590e;
+  margin-bottom: 25px;
+  font-family: "Poppins Semibold";
+  text-transform: uppercase;
+}
+
+.redesSociais ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  gap: 15px;
+}
+
+.social {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #ffffff;
+
+  /* Centralização perfeita do ícone */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* --- REFORÇO PARA OS ÍCONES --- */
+
+.social i,
+#instagramIcon,
+#facebookIcon,
+#linkedinIcon,
+#behanceIcon {
+  font-size: 22px;
+  color: #162537 !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Efeito Hover */
+.social:hover {
+  background: #ff590e;
+  transform: translateY(-5px);
+}
+
+.social:hover i,
+.social:hover #instagramIcon,
+.social:hover #facebookIcon,
+.social:hover #linkedinIcon {
+  color: #ffffff !important;
+}
+
+/* Dev */
+.dev {
+  grid-area: dev;
+  text-align: center;
+  padding: 20px;
+  background: #0d1621;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8em;
+  width: 100%;
+}
+
+/* Responsividade */
+@media (max-width: 1070px) {
+  .rodape {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "sobreNos contato" "sobreNos redesSociais" "formContato formContato";
+  }
+  .formContato {
+    margin-left: 0px;
+  }
+}
+@media (max-width: 640px) {
+  .rodape {
+    grid-template-columns: 1fr;
+    grid-template-areas: "sobreNos" "contato" "redesSociais" "formContato";
+  }
+  .formContato ul ul {
+    flex-direction: column;
+  }
+  .formContato ul ul li {
+    width: 100%;
+  }
+}
+/* --- Estilos do Botão WhatsApp --- */
+.botaoWhatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #25d366; /* Verde WhatsApp */
+  color: #ffffff !important;
+  font-weight: 700;
+  padding: 10px 15px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.botaoWhatsapp:hover {
+  background-color: #1ebc57;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+  color: #ffffff !important;
+}
+
+.botaoWhatsapp i {
+  font-size: 20px;
+}
+
+/* Ajuste do campo de texto do formulário */
+.formContato textarea {
+  width: 100%;
+  height: 80px;
+  border-radius: 5px;
+  border: none;
+  color: #162537;
+  background: #ffffff;
+  padding: 10px 15px;
+  margin-top: 5px;
+  resize: none;
+  font-family: "Poppins Regular";
+}
+
+.formContato textarea:focus {
+  border: 2px solid #ff590e;
+  outline: none;
+}

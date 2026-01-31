@@ -1,0 +1,196 @@
+/*=================================== ESTILOS CABEÇALHO (Final) ===================================*/
+
+header {
+  width: 100%;
+  padding: 10px 0;
+  background: #ffffff;
+  position: fixed;
+  z-index: 100;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  top: 0;
+  left: 0;
+}
+
+/* --- LOGO E BARRA DE NAVEGAÇÃO DESKTOP --- */
+.divBarraNavegacao {
+  max-width: 1310px;
+  padding: 0 30px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.divLogo {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  max-height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.divListaLinksBarraNavegacao {
+  display: flex;
+  align-items: center;
+}
+.listaLinksBarraNavegacao {
+  display: flex;
+  align-items: center;
+}
+.listaLinksBarraNavegacao > li {
+  margin-right: 30px;
+}
+.linkBarraNavegacao > a {
+  color: #162537;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.linkBarraNavegacao:hover > a {
+  color: #ff590e;
+}
+
+/* Botão Orçamento (Desktop) */
+.botaoOrcamentoBarraNavegacao {
+  background: #ff590e;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 8px 15px;
+  transition: all 0.3s ease;
+}
+.linkBotaoOrcamentoBarraNavegacao:hover > .botaoOrcamentoBarraNavegacao {
+  transform: scale(1.05);
+  background: #1665c1;
+}
+
+/* --- MENU MOBILE (CORREÇÃO DO ÍCONE E POSIÇÃO) --- */
+
+/* Área clicável do botão no topo direito */
+.navBurguer {
+  display: none; /* Escondido no Desktop */
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 100%; /* Área grande para facilitar o toque */
+  z-index: 200;
+}
+
+/* O container exato das 3 linhas */
+.icon-burguer {
+  width: 30px;
+  height: 22px; /* Altura total do ícone */
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%); /* Centraliza verticalmente na barra */
+  cursor: pointer;
+  z-index: 201;
+}
+
+/* O Checkbox Invisível (mas clicável) */
+#checkbox-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Torna invisível o quadrado azul */
+  cursor: pointer;
+  z-index: 202; /* Fica por cima de tudo para receber o clique */
+}
+
+/* O Label que segura as linhas visuais */
+#label-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espalha as linhas (topo, meio, fundo) */
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Deixa o clique passar para o checkbox */
+}
+
+/* ESTILO DAS 3 LINHAS */
+#label-menu span {
+  display: block;
+  width: 100%;
+  height: 4px; /* Espessura da linha */
+  background: #1665c1; /* AZUL (Fechado) */
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+/* --- ANIMAÇÃO DO "X" (Quando aberto) --- */
+
+/* Linha 1: Desce e Roda */
+#checkbox-menu:checked ~ #label-menu span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+  background: #ff590e; /* LARANJA (Aberto) */
+}
+
+/* Linha 2: Some */
+#checkbox-menu:checked ~ #label-menu span:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* Linha 3: Sobe e Roda Inverso */
+#checkbox-menu:checked ~ #label-menu span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+  background: #ff590e; /* LARANJA (Aberto) */
+}
+
+/* --- O MENU LATERAL BRANCO --- */
+#divListaLinksNavBurguer {
+  position: fixed;
+  top: 0;
+  right: -120%; /* Escondido */
+  width: 100%;
+  height: 100vh;
+  background: #ffffff;
+  padding-top: 100px;
+  transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Classe JS para abrir */
+#divListaLinksNavBurguer.menuAtivo {
+  right: 0 !important;
+}
+
+/* Links do Menu Mobile */
+.listaLinksNavBurguer {
+  width: 100%;
+  text-align: center;
+}
+.linksNavBurguer {
+  margin-bottom: 20px;
+}
+.linksNavBurguer a {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  padding: 15px;
+  background: #ff590e;
+  color: #ffffff;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 1025px) {
+  .divListaLinksBarraNavegacao {
+    display: none;
+  } /* Esconde menu desktop */
+  .navBurguer {
+    display: block;
+  } /* Mostra mobile */
+  header {
+    height: 80px;
+  } /* Altura fixa no mobile */
+}
