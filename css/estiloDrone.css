@@ -396,25 +396,275 @@
   transform: scale(1.05);
 }
 
-/* --- 6. RESPONSIVIDADE (MOBILE REDUZIDO) --- */
-@media (max-width: 768px) {
+/* --- 6. RESPONSIVIDADE (MOBILE) --- */
+
+/* Tablets e telas médias */
+@media (max-width: 1024px) {
   .heroDrone {
-    justify-content: center;
-    text-align: center;
-  }
-  .contentHeroDrone h1 {
-    font-size: 1.8em;
+    min-height: 450px;
   }
 
-  /* Container do Carrossel */
+  .contentHeroDrone h1 {
+    font-size: 2.4em;
+  }
+
+  .contentHeroDrone p {
+    font-size: 1.1em;
+  }
+
+  .diferenciaisDrone,
+  .solucoesDrone,
+  .portfolioDrone {
+    padding: 60px 0;
+  }
+
+  .headerSection {
+    margin-bottom: 50px;
+  }
+
+  .gridVideos {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  /* Hero */
+  .heroDrone {
+    min-height: 400px;
+  }
+
+  .contentHeroDrone h5 {
+    font-size: 0.9em;
+    letter-spacing: 2px;
+  }
+
+  .contentHeroDrone h1 {
+    font-size: 2em;
+  }
+
+  .contentHeroDrone p {
+    font-size: 1em;
+    margin-bottom: 30px;
+  }
+
+  .btnDrone {
+    padding: 10px 30px;
+    font-size: 0.9em;
+  }
+
+  /* Seções */
+  .diferenciaisDrone,
+  .solucoesDrone,
+  .portfolioDrone {
+    padding: 50px 0;
+  }
+
+  .containerDrone {
+    padding: 0 20px;
+  }
+
+  .headerSection {
+    margin-bottom: 40px;
+  }
+
+  .subtituloDrone,
+  .subtituloDroneClaro {
+    font-size: 1em;
+    margin-top: -20px;
+  }
+
+  /* Diferenciais */
+  .cardDif {
+    min-width: 280px;
+    padding: 25px;
+  }
+
+  .iconDif {
+    font-size: 2em;
+  }
+
+  .textDif h3 {
+    font-size: 1em;
+  }
+
+  .textDif p {
+    font-size: 0.85em;
+  }
+
+  /* Soluções */
+  .gridSolucoes {
+    gap: 30px;
+  }
+
+  .imgSolucao {
+    height: 180px;
+  }
+
+  .contentSolucao {
+    padding: 25px;
+  }
+
+  .contentSolucao h3 {
+    font-size: 1.2em;
+  }
+
+  /* Vídeos */
+  .gridVideos {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .gridShorts {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  /* CTA */
+  .ctaDrone h2 {
+    font-size: 2em;
+  }
+
+  .ctaDrone p {
+    font-size: 1.1em;
+  }
+
+  .btnDecolar {
+    padding: 12px 35px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Hero centralizado */
+  .heroDrone {
+    margin-top: 70px;
+    height: calc(100vh - 70px);
+    min-height: 400px;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+  }
+
+  .overlayDrone {
+    background: rgba(22, 37, 55, 0.85);
+  }
+
+  .contentHeroDrone {
+    padding: 0 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contentHeroDrone h5,
+  .contentHeroDrone h1,
+  .contentHeroDrone p {
+    max-width: 100%;
+  }
+
+  .contentHeroDrone h5 {
+    font-size: 0.85em;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+  }
+
+  .contentHeroDrone h1 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+  }
+
+  .contentHeroDrone p {
+    font-size: 0.95em;
+    margin-bottom: 25px;
+  }
+
+  .btnDrone {
+    padding: 10px 25px;
+    font-size: 0.85em;
+  }
+
+  /* Seções */
+  .diferenciaisDrone,
+  .solucoesDrone,
+  .portfolioDrone {
+    padding: 40px 0;
+  }
+
+  .containerDrone {
+    padding: 0 15px;
+  }
+
+  .headerSection {
+    margin-bottom: 30px;
+  }
+
+  .subtituloDrone,
+  .subtituloDroneClaro {
+    font-size: 0.95em;
+    margin-top: -15px;
+  }
+
+  /* Diferenciais */
+  .gridDiferenciais {
+    gap: 20px;
+  }
+
+  .cardDif {
+    min-width: auto;
+    width: 100%;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .iconDif {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+
+  .textDif h3 {
+    font-size: 1.05em;
+  }
+
+  /* Soluções */
+  .gridSolucoes {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .imgSolucao {
+    height: 160px;
+  }
+
+  .imgSolucao i {
+    font-size: 2.5em;
+  }
+
+  .contentSolucao {
+    padding: 20px;
+  }
+
+  .contentSolucao h3 {
+    font-size: 1.1em;
+  }
+
+  .contentSolucao p {
+    font-size: 0.9em;
+  }
+
+  .listaCheck li {
+    font-size: 0.85em;
+  }
+
+  /* Portfólio - Carrossel Mobile */
   .gridVideos,
   .gridShorts {
     display: flex !important;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    gap: 15px; /* Espaço entre os vídeos */
-    padding: 20px 5%; /* Margem nas laterais para o vídeo não colar na borda */
+    gap: 15px;
+    padding: 20px 5%;
     scrollbar-width: none;
   }
 
@@ -423,42 +673,233 @@
     display: none;
   }
 
-  /* Cada card agora ocupa 90% da largura, deixando um respiro lateral */
   .videoCard {
     flex: 0 0 90% !important;
     min-width: 90% !important;
     scroll-snap-align: center;
   }
 
-  /* Shorts: como são verticais, 70% de largura costuma ficar melhor visualmente */
   .shortCard {
     flex: 0 0 70% !important;
     max-width: 280px;
     scroll-snap-align: center;
   }
 
-  /* Setas mais discretas */
+  .videoInfo {
+    padding: 15px;
+  }
+
+  .videoInfo h3 {
+    font-size: 1.05em;
+  }
+
+  .videoInfo p {
+    font-size: 0.85em;
+  }
+
+  /* Setas do Carrossel */
   .nav-arrow {
     display: flex;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 89, 14, 0.8);
+    background: rgba(255, 89, 14, 0.9);
     color: white;
     border: none;
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     align-items: center;
     justify-content: center;
     z-index: 10;
-    font-size: 0.8em;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-arrow:active {
+    transform: translateY(-50%) scale(0.95);
   }
 
   .prev {
-    left: 5px;
+    left: 10px;
   }
+
   .next {
-    right: 5px;
+    right: 10px;
+  }
+
+  /* CTA */
+  .ctaDrone {
+    padding: 40px 15px;
+  }
+
+  .ctaDrone h2 {
+    font-size: 1.6em;
+    margin-bottom: 8px;
+  }
+
+  .ctaDrone p {
+    font-size: 1em;
+    margin-bottom: 25px;
+  }
+
+  .btnDecolar {
+    padding: 12px 30px;
+    font-size: 0.95em;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Hero */
+  .contentHeroDrone h5 {
+    font-size: 0.8em;
+  }
+
+  .contentHeroDrone h1 {
+    font-size: 1.5em;
+  }
+
+  .contentHeroDrone p {
+    font-size: 0.9em;
+  }
+
+  .btnDrone {
+    padding: 8px 20px;
+    font-size: 0.8em;
+  }
+
+  /* Seções */
+  .diferenciaisDrone,
+  .solucoesDrone,
+  .portfolioDrone {
+    padding: 30px 0;
+  }
+
+  .subtituloDrone,
+  .subtituloDroneClaro {
+    font-size: 0.9em;
+  }
+
+  /* Diferenciais */
+  .cardDif {
+    padding: 18px;
+  }
+
+  .iconDif {
+    font-size: 2.2em;
+  }
+
+  .textDif h3 {
+    font-size: 1em;
+  }
+
+  .textDif p {
+    font-size: 0.8em;
+  }
+
+  /* Soluções */
+  .imgSolucao {
+    height: 150px;
+  }
+
+  .imgSolucao i {
+    font-size: 2.2em;
+  }
+
+  .contentSolucao {
+    padding: 18px;
+  }
+
+  .contentSolucao h3 {
+    font-size: 1.05em;
+  }
+
+  .contentSolucao p {
+    font-size: 0.85em;
+  }
+
+  .listaCheck li {
+    font-size: 0.8em;
+  }
+
+  /* Vídeos */
+  .videoInfo {
+    padding: 12px;
+  }
+
+  .videoInfo h3 {
+    font-size: 1em;
+  }
+
+  .videoInfo p {
+    font-size: 0.8em;
+  }
+
+  .nav-arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9em;
+  }
+
+  /* CTA */
+  .ctaDrone h2 {
+    font-size: 1.4em;
+  }
+
+  .ctaDrone p {
+    font-size: 0.95em;
+  }
+
+  .btnDecolar {
+    padding: 10px 25px;
+    font-size: 0.9em;
+  }
+}
+
+/* Telas muito pequenas */
+@media (max-width: 400px) {
+  .contentHeroDrone h1 {
+    font-size: 1.3em;
+  }
+
+  .contentHeroDrone p {
+    font-size: 0.85em;
+  }
+
+  .btnDrone {
+    padding: 8px 18px;
+    font-size: 0.75em;
+  }
+
+  .cardDif {
+    padding: 15px;
+  }
+
+  .iconDif {
+    font-size: 2em;
+  }
+
+  .imgSolucao {
+    height: 130px;
+  }
+
+  .nav-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 0.85em;
+  }
+
+  .ctaDrone h2 {
+    font-size: 1.2em;
+  }
+
+  .ctaDrone p {
+    font-size: 0.9em;
+  }
+
+  .btnDecolar {
+    padding: 10px 20px;
+    font-size: 0.85em;
   }
 }
