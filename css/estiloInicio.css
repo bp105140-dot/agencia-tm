@@ -578,13 +578,14 @@ input {
 .swiper {
   width: 100%;
   padding-bottom: 50px !important;
-  padding-top: 20px;
+  padding-top: 30px !important; /* AUMENTADO: mais espaço para ver a borda superior */
+  overflow: visible !important; /* ADICIONADO: permite ver a borda laranja */
 }
 .swiper-slide {
   display: flex;
   justify-content: center;
   height: auto;
-  padding: 0 20px;
+  padding: 10px 20px; /* AUMENTADO padding vertical de 0 para 10px */
 }
 .swiper-slide .cardCase {
   width: 100%;
@@ -665,10 +666,14 @@ input {
 #imgCase1 {
   background-image: url("../galeria/Case1.jpg");
   background-repeat: no-repeat;
+  background-size: cover !important; /* FORÇADO */
+  background-position: center !important; /* FORÇADO */
 }
 #imgCase2 {
   background-image: url("../galeria/Case2.jpg");
   background-repeat: no-repeat;
+  background-size: cover !important; /* FORÇADO */
+  background-position: center !important; /* FORÇADO */
 }
 .swiper-button-next,
 .swiper-button-prev {
