@@ -689,91 +689,479 @@ input {
 }
 
 /*=================================== RESPONSIVIDADE (MOBILE) ===================================*/
+
+/* Tablets e telas médias */
+@media (max-width: 1024px) {
+  .titleSectionWhite,
+  .titleSectionBlack {
+    font-size: 2em;
+    margin-bottom: 40px;
+  }
+
+  .subTitleSectionBlack {
+    font-size: 1.6em;
+  }
+}
+
 @media (max-width: 900px) {
+  /* Ajustes de padding geral */
+  .blackBg,
+  .whiteBg {
+    padding: 40px 0;
+  }
+
+  /* Títulos */
+  .titleSectionWhite,
+  .titleSectionBlack {
+    font-size: 1.8em;
+    padding: 0 20px;
+    margin-bottom: 30px;
+  }
+
+  .subTitleSectionBlack {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+
+  /* Quem Somos */
+  .boxQuemSomos {
+    padding: 30px 20px;
+    margin: 0 20px;
+  }
+
+  .boxQuemSomos .titleSectionWhite {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+  }
+
+  .textoQuemSomos p {
+    font-size: 0.95em;
+    line-height: 1.7;
+  }
+
+  /* Diferenciais */
   .diferencial {
     width: 48%;
     max-width: none;
+    padding: 15px 10px;
   }
+
+  .diferencial h3 {
+    font-size: 1em;
+  }
+
+  .diferencial p {
+    font-size: 0.85em;
+  }
+
+  .diferencial img {
+    max-width: 80px;
+  }
+
+  /* Outros Serviços */
   .listaServicosExtra {
     flex-direction: column;
     align-items: center;
+    gap: 20px;
   }
+
   .cardExtra {
     width: 100%;
     max-width: 100%;
+    padding: 30px 20px;
+  }
+
+  .cardExtra h3 {
+    font-size: 1.15em;
+  }
+
+  .cardExtra p {
+    font-size: 0.9em;
   }
 }
 
 @media (max-width: 768px) {
+  /* Font size base reduzido */
+  body {
+    font-size: 14px;
+  }
+
+  /* Títulos gerais */
+  h1 {
+    font-size: 1.6em;
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+
+  h3 {
+    font-size: 1.1em;
+  }
+
   /* CAPA MOBILE: Centraliza tudo */
   .divCapaInicio {
+    margin-top: 70px;
+    height: calc(100vh - 70px);
+    min-height: 450px;
     justify-content: center;
     align-items: center;
     background-position: center;
   }
+
   .divCapaInicio::before {
     background: rgba(22, 37, 55, 0.85);
-  } /* Escurece uniforme */
+  }
 
   .divContentCapa {
     padding: 0 20px;
     justify-content: center;
   }
+
   .contentCapa {
     text-align: center;
     max-width: 100%;
   }
 
   .titleCapa {
-    font-size: 2em;
+    font-size: 1.8em;
+    margin-bottom: 15px;
   }
+
   .divTextCapa p:nth-child(2) {
-    margin: 0 auto 30px auto;
-    font-size: 1em;
+    margin: 0 auto 25px auto;
+    font-size: 0.95em;
+    max-width: 100%;
   }
 
   .divBotaoServicosCapa {
     justify-content: center;
+    gap: 10px;
   }
 
-  /* Serviços e Cases */
+  .botaoServicosCapa,
+  .botaoDroneCapa {
+    font-size: 0.85em;
+    padding: 10px 20px;
+  }
+
+  /* Quem Somos */
+  .boxQuemSomos {
+    padding: 25px 15px;
+    margin: 0 15px;
+  }
+
+  .boxQuemSomos .titleSectionWhite {
+    font-size: 1.4em;
+  }
+
+  .textoQuemSomos p {
+    font-size: 0.9em;
+  }
+
+  /* Diretrizes */
+  .contentDiretrizes {
+    padding: 0 20px;
+  }
+
+  .listaDiretrizes {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .cardDiretriz {
+    width: 100%;
+    padding: 30px 20px;
+    min-width: auto;
+  }
+
+  .cardDiretriz i {
+    font-size: 35px;
+    padding: 15px;
+  }
+
+  .cardDiretriz h3 {
+    font-size: 1.1em;
+  }
+
+  .cardDiretriz p {
+    font-size: 0.9em;
+  }
+
+  /* Diferenciais */
+  .listaDiferenciais {
+    padding: 0 20px;
+  }
+
+  .diferencial {
+    width: 48%;
+    padding: 15px 10px;
+  }
+
+  /* Soluções/Serviços */
+  .divSolucoes > div + div {
+    margin-top: 50px;
+  }
+
   .solucaoServico {
     flex-direction: column !important;
     text-align: center;
-    gap: 30px;
+    gap: 25px;
+    padding: 0 20px;
   }
+
+  .textSolucaoServico {
+    width: 100%;
+    text-align: center;
+  }
+
+  .textSolucaoServico .textOn {
+    font-size: 1em;
+  }
+
+  .subTitleSectionBlack {
+    font-size: 1.3em;
+  }
+
+  .textSection {
+    font-size: 0.95em;
+  }
+
   .divImgServico,
   .imgCase {
     width: 100%;
-    max-width: 300px;
+    max-width: 100%;
     margin: 0 auto;
-    height: 250px;
+    height: 220px;
     order: -1;
   }
-  .textSolucaoServico {
-    width: 100%;
+
+  /* Outros Serviços */
+  .contentOutrosServicos {
+    padding: 0 20px;
+  }
+
+  .cardExtra {
+    padding: 25px 20px;
+  }
+
+  .iconExtra {
+    width: 70px;
+    height: 70px;
+  }
+
+  .iconExtra i {
+    font-size: 30px;
+  }
+
+  .cardExtra h3 {
+    font-size: 1.1em;
+  }
+
+  /* Cases (Swiper) */
+  .listaCases {
+    padding: 0 15px;
+  }
+
+  .swiper-slide {
+    padding: 0 10px;
   }
 
   .swiper-button-next,
   .swiper-button-prev {
     display: none;
   }
+
   .cardCase {
     flex-direction: column-reverse;
   }
 
-  /* Diretrizes */
-  .listaDiretrizes {
-    flex-direction: column;
-    align-items: center;
+  .cardCase h3 {
+    font-size: 1.4em;
   }
-  .cardDiretriz {
-    width: 100%;
+
+  .descCase {
+    font-size: 0.9em;
+    max-width: 100%;
+  }
+
+  .infoCase {
+    padding: 30px 20px;
+  }
+
+  .numerosCase {
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+
+  .dado span.destaque {
+    font-size: 2em;
+  }
+
+  .dado p {
+    font-size: 0.85em;
+  }
+
+  .imgCase {
+    min-height: 250px;
   }
 }
 
 @media (max-width: 600px) {
+  /* Padding geral ainda menor */
+  .blackBg,
+  .whiteBg {
+    padding: 30px 0;
+  }
+
+  /* Títulos principais */
+  .titleSectionWhite,
+  .titleSectionBlack {
+    font-size: 1.5em;
+    margin-bottom: 25px;
+    padding: 0 15px;
+  }
+
+  /* Capa */
+  .titleCapa {
+    font-size: 1.5em;
+  }
+
+  .divTextCapa p:nth-child(2) {
+    font-size: 0.9em;
+  }
+
+  /* Quem Somos */
+  .boxQuemSomos {
+    padding: 20px 15px;
+  }
+
+  .boxQuemSomos .titleSectionWhite {
+    font-size: 1.3em;
+  }
+
+  .textoQuemSomos p {
+    font-size: 0.85em;
+  }
+
+  /* Diretrizes */
+  .cardDiretriz {
+    padding: 25px 15px;
+  }
+
+  .cardDiretriz i {
+    font-size: 30px;
+    padding: 12px;
+  }
+
+  /* Diferenciais */
   .diferencial {
     width: 100%;
+    padding: 15px;
+  }
+
+  .diferencial img {
+    max-width: 70px;
+  }
+
+  /* Soluções */
+  .divSolucoes > div + div {
+    margin-top: 40px;
+  }
+
+  .subTitleSectionBlack {
+    font-size: 1.2em;
+  }
+
+  .divImgServico {
+    height: 200px;
+  }
+
+  /* Outros Serviços */
+  .cardExtra {
+    padding: 25px 15px;
+  }
+
+  .iconExtra {
+    width: 60px;
+    height: 60px;
+  }
+
+  .iconExtra i {
+    font-size: 28px;
+  }
+
+  .cardExtra h3 {
+    font-size: 1em;
+  }
+
+  .cardExtra p {
+    font-size: 0.85em;
+  }
+
+  .btnExtra {
+    padding: 8px 20px;
+    font-size: 0.85em;
+  }
+
+  /* Cases */
+  .cardCase h3 {
+    font-size: 1.2em;
+  }
+
+  .infoCase {
+    padding: 25px 15px;
+  }
+
+  .numerosCase {
+    gap: 20px;
+  }
+
+  .dado span.destaque {
+    font-size: 1.8em;
+  }
+
+  .imgCase {
+    min-height: 200px;
+  }
+}
+
+/* Telas muito pequenas (smartphones antigos) */
+@media (max-width: 400px) {
+  body {
+    font-size: 13px;
+  }
+
+  .titleCapa {
+    font-size: 1.3em;
+  }
+
+  .divTextCapa p:nth-child(2) {
+    font-size: 0.85em;
+  }
+
+  .botaoServicosCapa,
+  .botaoDroneCapa {
+    font-size: 0.8em;
+    padding: 8px 15px;
+  }
+
+  .titleSectionWhite,
+  .titleSectionBlack {
+    font-size: 1.3em;
+  }
+
+  .cardDiretriz i {
+    font-size: 28px;
+  }
+
+  .numerosCase {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .dado span.destaque {
+    font-size: 1.6em;
   }
 }
